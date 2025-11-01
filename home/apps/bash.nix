@@ -4,11 +4,15 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    #profileExtra = ''
-    #if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-    # exec Hyprland
-    #fi
-    #'';
+    initExtra = ''
+      mkdirenv() {
+        nix flake init --template github:dsig0/dotfiles#"$1"
+      }
+
+      redirenv() {
+        rm -rf .direnv .devenv
+      }
+    '';
     shellAliases = {
       sv = "sudo nvim";
       switch = "nh os switch -H ideapad";
