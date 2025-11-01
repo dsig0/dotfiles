@@ -9,7 +9,6 @@
         email = "75738471+dsig0@users.noreply.github.com";
       };
 
-      init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
       pull.ff = "only";
