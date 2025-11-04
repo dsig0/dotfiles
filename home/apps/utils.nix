@@ -1,4 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   programs.eza = {
@@ -65,6 +69,7 @@
     inxi # show system information
     powertop
     bat
+    fastfetch
 
     # Show Disk Usage
     dua
@@ -82,7 +87,6 @@
     evince # pdf
     audacious
     zenity
-    firefox
 
     swww
 
@@ -101,7 +105,7 @@
 
     # editors
     zed-editor
-    inputs.nixvim.packages.${pkgs.system}.default
+    inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default
     code-cursor
     vscode
 
@@ -129,22 +133,25 @@
     aws-nuke
 
     # zen-browser
-    # inputs.zen-browser.packages.${pkgs.system}.default
+    # inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     #google-chrome
     brave
+    firefox
 
     #minecraft
     prismlauncher
 
+    steam
+
     # formatter
-    nixfmt-classic
+    nixfmt-rfc-style
     shfmt
 
-    (pkgs.writeShellApplication {
-      name = "ns";
-      runtimeInputs = with pkgs; [ fzf nix-search-tv ];
-      text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
-    })
+    # (pkgs.writeShellApplication {
+    #   name = "ns";
+    #   runtimeInputs = with pkgs; [ fzf nix-search-tv ];
+    #   text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
+    # })
 
     sway-audio-idle-inhibit
   ];

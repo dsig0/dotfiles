@@ -5,8 +5,8 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      (vaapiIntel.override { enableHybridCodec = true; })
-      vaapiVdpau
+      libva-vdpau-driver
+      intel-vaapi-driver
       libvdpau-va-gl
     ];
   };

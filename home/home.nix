@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -31,7 +36,6 @@
     NIXOS_OZONE_WL = "1";
     NH_NOM = "1";
   };
-
 
   home.enableNixpkgsReleaseCheck = false;
   home = {

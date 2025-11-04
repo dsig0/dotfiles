@@ -11,7 +11,7 @@
     adjust-box-thickness = 1
 
     # Theme
-    theme = catppuccin-mocha
+    theme = Catppuccin Mocha
     background-opacity = 0.95
 
     cursor-style = bar

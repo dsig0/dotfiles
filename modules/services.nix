@@ -4,9 +4,7 @@
   # Networking & Bluetooth
   networking.networkmanager = {
     enable = true;
-    wifi = {
-      powersave = false;
-    };
+    wifi = { powersave = false; };
   };
   hardware.bluetooth.enable = true;
 
@@ -28,7 +26,7 @@
     NH_NOM = "1";
   };
 
-   programs = {
+  programs = {
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -52,16 +50,14 @@
     rtkit.enable = true;
     sudo.enable = true;
     polkit.enable = true;
-    pam.services = {
-      swaylock = { };
-    };
+    pam.services = { swaylock = { }; };
   };
 
   xdg.portal = {
     enable = true;
     wlr.enable = true;
   };
-  
+
   services.printing.enable = true;
   services.gvfs.enable = true;
   services.dbus.enable = true;
@@ -105,5 +101,9 @@
 
     # System utils
     nvtopPackages.full
+
+    pavucontrol
+    alsa-utils
+    pamixer
   ];
 }
