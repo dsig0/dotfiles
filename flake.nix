@@ -23,28 +23,37 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, mango, ... }@inputs: {
-    nixosConfigurations = {
-      ideapad = nixpkgs.lib.nixosSystem {
-         = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          mango.nixosModules.mango
-          ./hosts/ideapad/configuration.nix
-          home-manager.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users = { zenith = import ./home/home.nix; };
-              backupFileExtension = "backup";
-              overwriteBackup = true;
-              extraSpecialArgs = { inherit inputs; };
-            };
-          }
-        ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      mango,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        ideapad = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            mango.nixosModules.mango
+            ./hosts/ideapad/configuration.nix
+            home-manager.nixosModules.default
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users = {
+                  zenith = import ./home/home.nix;
+                };
+                backupFileExtension = "backup";
+                overwriteBackup = true;
+                extraSpecialArgs = { inherit inputs; };
+              };
+            }
+          ];
+        };
       };
+      templates = import ./templates/default.nix;
     };
-    templates = import ./templates/default.nix;
-  };
 }

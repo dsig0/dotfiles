@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Install necessary packages
   environment.systemPackages = with pkgs; [
     virt-manager
@@ -15,7 +16,9 @@
   virtualisation = {
     libvirtd = {
       enable = true;
-      qemu = { swtpm.enable = true; };
+      qemu = {
+        swtpm.enable = true;
+      };
     };
     spiceUSBRedirection.enable = true;
   };

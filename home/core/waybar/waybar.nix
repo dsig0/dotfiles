@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [ waybar ];
 
   xdg.configFile."waybar/style.css".source = ./style.css;

@@ -44,10 +44,10 @@
   };
 
   dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
+  };
 
   home.packages = with pkgs; [
     noto-fonts

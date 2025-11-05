@@ -1,3 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   xdg.configFile."mango/config.conf".source = ./config.conf;
 }
