@@ -4,9 +4,7 @@
   # Networking & Bluetooth
   networking.networkmanager = {
     enable = true;
-    wifi = {
-      powersave = false;
-    };
+    wifi = { powersave = false; };
   };
   hardware.bluetooth.enable = true;
 
@@ -52,9 +50,7 @@
     rtkit.enable = true;
     sudo.enable = true;
     polkit.enable = true;
-    pam.services = {
-      swaylock = { };
-    };
+    pam.services = { swaylock = { }; };
   };
 
   xdg.portal = {

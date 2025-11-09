@@ -101,7 +101,7 @@
 
     # editors
     zed-editor
-    inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default
     code-cursor
     vscode
 
