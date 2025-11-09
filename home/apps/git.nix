@@ -28,7 +28,10 @@
     };
   };
 
-  home.packages = [ pkgs.gh ]; # pkgs.git-lfs
+  home.packages = with pkgs; [
+    gh
+    lazygit
+  ];
 
   home.shellAliases = {
     gs = "git status";
