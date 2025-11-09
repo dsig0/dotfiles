@@ -15,8 +15,8 @@
     '';
     shellAliases = {
       sv = "sudo nvim";
-      switch = "nh os switch -H ideapad";
-      update = "nh os switch -u -H ideapad";
+      switch = "nh os switch";
+      update = "nh os switch --update";
       gcclean = "nh clean all --keep 5";
       nix-search = "nh search";
       nix-test = "nh os test";
