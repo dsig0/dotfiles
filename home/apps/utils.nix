@@ -73,7 +73,6 @@
     dysk
 
     ## GUI Apps
-    libreoffice
     nix-prefetch-github
     resources # GUI resources monitor
     vlc
@@ -83,7 +82,9 @@
     evince # pdf
     audacious
     zenity
+    onlyoffice-desktopeditors
 
+    joplin-desktop
     swww
 
     tree
@@ -102,7 +103,7 @@
     # editors
     zed-editor
     #inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default
-    code-cursor
+    #code-cursor
     vscode
 
     # C / C++
@@ -136,7 +137,6 @@
 
     #minecraft
     prismlauncher
-
     steam
 
     # formatter

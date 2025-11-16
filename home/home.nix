@@ -20,6 +20,7 @@
     ./apps/nemo.nix
     ./apps/swaylock.nix
     ./apps/xdg.nix
+    ./apps/tmux.nix
     ./apps/direnv.nix
     ./core/waybar/waybar.nix
     ./core/mango/mango.nix
